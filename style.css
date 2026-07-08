@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0F172A, #1E40AF, #2563EB);
+    background-size: 300% 300%;
+    animation: bgMove 8s ease infinite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    min-height: 45vh;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    transition: 0.4s;
+    animation: fadeIn 1s ease;
+    width: 90%;
+    max-width: 420px;
+
+}
+
+.container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+.container h2 {
+    text-align: center;
+    color: #1E293B;
+    margin-bottom: 0.5rem;
+    animation: slideDown 1s ease;
+}
+
+form {
+    margin: 2rem 0 1rem 0;
+}
+
+.amount p,
+.from p,
+.to p {
+    color: #334155;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+form select,
+form button,
+form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 0.75rem;
+}
+
+form input {
+    border: 1px solid #CBD5E1;
+    background-color: #F8FAFC;
+    color: #1E293B;
+    font-size: 1rem;
+    height: 3rem;
+    padding-left: 0.75rem;
+    transition: 0.3s;
+}
+
+form input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.35);
+    transform: scale(1.02);
+}
+
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.dropdown i {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #2563EB;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.dropdown i:hover {
+    transform: rotate(180deg);
+    color: #1D4ED8;
+}
+
+.select-container img {
+    width: 2rem;
+    transition: 0.3s;
+}
+
+.select-container img:hover {
+    transform: scale(1.2);
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    border-radius: 0.75rem;
+    border: 1px solid #CBD5E1;
+    background-color: #F8FAFC;
+    padding: 0.35rem;
+    transition: 0.3s;
+}
+
+.select-container:hover {
+    border-color: #2563EB;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.15);
+}
+
+.select-container select {
+    font-size: 1rem;
+    width: auto;
+    background: transparent;
+    color: #1E293B;
+    cursor: pointer;
+}
+
+.message {
+    margin: 2rem 0;
+    font-weight: bold;
+    text-align: center;
+    color: #1E3A8A;
+    font-size: 1.05rem;
+}
+
+form button {
+    height: 3rem;
+    background-color: #2563EB;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1D4ED8;
+    transform: scale(1.05);
+    letter-spacing: 1px;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+form button:active {
+    transform: scale(0.97);
+}
+
+
+//Animations
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .dropdown {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .dropdown i {
+        transform: rotate(90deg);
+        margin: 0;
+    }
+
+    .select-container {
+        width: 100%;
+    }
+
+    .select-container select {
+        width: 100%;
+    }
+
+    form button {
+        font-size: 1rem;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 1.25rem;
+    }
+
+    .container h2 {
+        font-size: 1.5rem;
+    }
+
+    form input,
+    form button {
+        height: 2.8rem;
+        font-size: 0.95rem;
+    }
+
+    .dropdown {
+        gap: 1rem;
+    }
+
+    .message {
+        font-size: 0.95rem;
+    }
+}
